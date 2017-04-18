@@ -1,0 +1,15 @@
+name: NecroCore
+version: 1.0
+main: net.necrocore.main.NecroCore
+author: Zyenax
+commands:
+  gm:
+    description: set a players gamemode!
+  gamemode:
+    description: set a players gamemode!
+  msg:
+    description: msg a player!
+  message:
+    description: msg a player!
+  setrank:
+    description: set a players rank!
