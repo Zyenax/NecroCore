@@ -2,11 +2,9 @@ package net.necrocore.main.utils;
 
 import java.lang.reflect.Field;
 
-import net.minecraft.server.v1_8_R3.BlockPosition;
 import net.minecraft.server.v1_8_R3.EnumParticle;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
-import net.minecraft.server.v1_8_R3.PacketPlayOutBlockAction;
 import net.minecraft.server.v1_8_R3.PacketPlayOutChat;
 import net.minecraft.server.v1_8_R3.PacketPlayOutPlayerListHeaderFooter;
 import net.minecraft.server.v1_8_R3.PacketPlayOutTitle;
@@ -19,8 +17,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.FireworkEffect;
 import org.bukkit.Location;
-import org.bukkit.Sound;
-import org.bukkit.block.Block;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftFirework;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Entity;
@@ -222,20 +218,6 @@ public class Packets implements Listener{
     		}
 		}, 0, 1);
 	}
-	
-	@SuppressWarnings("deprecation")
-	public void changeChestState(Location loc, boolean open)
-	  {
-	    byte dataByte = (byte) (open ? 1 : 0);
-	    for (Player player : Bukkit.getOnlinePlayers())
-	    {
-	      player.playSound(player.getLocation(), Sound.CHEST_OPEN, 1.0F, 0.0F);
-	      BlockPosition position = new BlockPosition(loc.getBlockX(), loc.getBlockY(), loc.getBlockZ());
-	      
-	      PacketPlayOutBlockAction blockActionPacket = new PacketPlayOutBlockAction(position, Block.getById(loc.getBlock().getTypeId()), 1, dataByte);
-	      ((CraftPlayer)player).getHandle().playerConnection.sendPacket(blockActionPacket);
-	    }
-	  }
 	
 	
 }

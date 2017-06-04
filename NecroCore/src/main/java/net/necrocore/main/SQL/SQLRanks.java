@@ -45,7 +45,14 @@ public class SQLRanks implements Listener{
     }
     
     public static String getRankColor(Player target) {
-    	if(getRank(target).equalsIgnoreCase(Rank.OWNER.getName())){
+    	return Rank.valueOf(getRank(target)).getColor();
+    	
+    	
+    	
+    	
+    	
+    	
+    	/*if(getRank(target).equalsIgnoreCase(Rank.OWNER.getName())){
     		return Rank.OWNER.getColor();
     	}else if(getRank(target).equalsIgnoreCase(Rank.ADMIN.getName())){
     		return Rank.ADMIN.getColor();
@@ -65,8 +72,8 @@ public class SQLRanks implements Listener{
     		return Rank.DONOR1.getColor();
     	}else if(getRank(target).equalsIgnoreCase(Rank.DEFAULT.getName())){
     		return Rank.DEFAULT.getColor();
-    	}
-		return null;
+    	}*/
+		//return null;
     }
 
     public static void setRank(Player target, String rankname) {

@@ -115,7 +115,7 @@ public class NecroCore extends JavaPlugin implements Listener, PluginMessageList
 	
 	public void connectMySQL() {
 		// IPADDRESS, PORT, DATABASE, USERNAME, PASSWORD
-	     mysql = new SQL("127.0.0.1", "3306", "endermite_584", "endermite_584", "8d09ed8619");
+	     mysql = new SQL("127.0.0.1", "3306", "NecroStorage", "NecroDevs", "qRtVf2u6xqzGshbg");
 	     PreparedStatement ranks = mysql.prepareStatement("CREATE TABLE IF NOT EXISTS Ranks(UUID varchar(36) NOT NULL, NAME VARCHAR(16) NOT NULL, RANK VARCHAR(45) NOT NULL, PRIMARY KEY(UUID))");
 	     PreparedStatement shards = mysql.prepareStatement("CREATE TABLE IF NOT EXISTS Shards(UUID varchar(36) NOT NULL, NAME VARCHAR(16) NOT NULL, SHARDS INT(20) NOT NULL, PRIMARY KEY(UUID))");
 	     PreparedStatement meteors = mysql.prepareStatement("CREATE TABLE IF NOT EXISTS Meteors(UUID varchar(36) NOT NULL, NAME VARCHAR(16) NOT NULL, METEORS INT(20) NOT NULL, PRIMARY KEY(UUID))");
